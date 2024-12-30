@@ -26,7 +26,7 @@ function lagrangeInterpolation(points) {
         }
         constantTerm += term;
     }
-    return constantTerm;
+    return Math.round(constantTerm); // Ensure the result is an integer
 }
 
 function processFile(filename) {
@@ -48,7 +48,9 @@ function processFile(filename) {
     }
 
     const constantTerm = lagrangeInterpolation(points);
-    console.log(`The constant term (c) for file "${filename}" is:`, constantTerm);
+    
+    // Change this line to match your desired output format
+    console.log(`The constant term (c) for file "${filename}" is: ${constantTerm}`);
 }
 
 function main() {
@@ -59,7 +61,3 @@ function main() {
 }
 
 main();
-
-
-// The constant term (c) for file "input1.json" is: 3
-// The constant term (c) for file "input2.json" is: 28735619723864
